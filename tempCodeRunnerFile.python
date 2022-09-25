@@ -1,0 +1,44 @@
+
+from multiprocessing.resource_sharer import stop
+
+
+s = 'rgfrrhgadasda'
+d= s.split(' ') 
+e = d.pop()
+g =[e]
+olist = list (g[0])
+print(olist)
+c = []
+ol = []
+
+for i in olist:
+    if i in ol:
+        break
+    else:
+        if i not in ol:
+            ol.append(str(i))
+            olist.remove(i)
+            if len(ol) > len(c):
+                c = ol[:]
+                ol.clear()
+        print(c)
+    
+
+
+#print(len(ol))
+
+    #print(olist)
+'''while len(olist) > 1:
+        if value not in c:
+            c= olist.pop()
+        if len(c) > len(ol):
+            ol = c[:]
+        print(len(ol))
+
+print(c)
+d = c
+print(d)
+
+while len(d) < 1:
+        c = d.pop()'''
+    
