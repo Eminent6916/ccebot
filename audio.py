@@ -11,14 +11,29 @@ import pyaudio
 import speech_recognition as s_r
 
 
+
 def get_voice():
     voice_reciever = s_r.Recognizer()
-    print("waiting...")
+    print("Speak up, I'm waiting...")
     with s_r.Microphone() as voice:
         audio= voice_reciever.listen(voice)
     words = voice_reciever.recognize_google(audio)
-    print(f'you mean " {words}"?')
-    pywhatkit.search(words)
+    print(f'you mean " {words}", Yes or No?')
+    quest = input("  :> ")
+    if quest.lower() == 'yes':
+        pywhatkit.search(words)
+    else:
+        print("sorry, please re-count")
+        voice_reciever = s_r.Recognizer()
+        print("Speak up, I'm waiting...")
+        with s_r.Microphone() as voice:
+            audio= voice_reciever.listen(voice)
+        words = voice_reciever.recognize_google(audio)
+        print(f'you mean " {words}", Yes or No?')
+        quest = input("  :> ")
+        if quest.lower() == 'yes':
+            pywhatkit.search(words)
+        
 
 get_voice()
 

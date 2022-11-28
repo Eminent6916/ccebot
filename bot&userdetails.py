@@ -1,5 +1,7 @@
-#I've started this and abandon it many times but i guess this is non-stop pick up may almighty God help me(amen)
 #110922
+#Godhelpme
+
+#
 """
     install SpeechRecognition
     install PyAudio to use mic.
@@ -25,8 +27,8 @@ def user_det():
 def bio_data():
     for info, details in user_detail.items():
         print(f'{info}: \t{details.title()}')
-    print(' \tDone!.\n \n \nIf any of the above information need adjustment kindly tell me: \n\"Adjust my bio data\"')
-
+    print(' \tDone!.\n \n \nIf any of the above information need adjustment kindly reply with: \n\"Adjust my bio data\"')
+    
 
 user_det()
 def greet_user(username):
@@ -39,8 +41,10 @@ def verify_text():
 
 greet_user(user_detail['username'])
 bio_data()
-if response.lower() == "Adjust my bio data":
-    user_det()
+user_det()
 verify_text()
 
+# response= input(' :> ')
+# if response.lower() == "Adjust my bio data":
 
+#started this and abandon it many times but i guess this is non-stop pick up. 
